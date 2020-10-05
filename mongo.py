@@ -50,6 +50,3 @@ def Login(email,password):
     return data
 
 #Register("anmolgoyal@gmail.com","Anmol Goyal","allocative")
-
-# Allocative
-# DeepReinorcementLearningProject

@@ -10,6 +10,9 @@ app.secret_key = "NothingIsSecret"
 def HomePage():
    return render_template("index.html")
 
+@app.route('/login')
+def LoginPage():
+   return render_template("login.html")
 
 @app.errorhandler(404)
 def error404(error):
