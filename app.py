@@ -14,6 +14,27 @@ def HomePage():
 def LoginPage():
    return render_template("login.html")
 
+
+# Ajax Call Functions 
+
+@app.route('/sign_action', methods=['POST'])
+def RegisterUser():
+    name = request.form['name']
+    email = request.form['email']
+    password = request.form['password']
+   
+    print(name,email,password)
+    return "Post Request Works"
+
+@app.route('/login_action', methods=['POST'])
+def LoginAction():
+    email = request.form['email']
+    password = request.form['password']
+    print(email, password)
+
+    return "Login Post Works"
+
+
 @app.errorhandler(404)
 def error404(error):
     return render_template('404.html'), 404
