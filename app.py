@@ -9,11 +9,15 @@ app.secret_key = "NothingIsSecret"
 
 @app.route('/')
 def HomePage():
-   return render_template("index.html")
+    if "name" in session: 
+        return redirect("/dashboard")
+    return render_template("index.html")
 
 @app.route('/login')
 def LoginPage():
-   return render_template("login.html")
+    if "name" in session: 
+        return redirect("/dashboard")
+    return render_template("login.html")
 
 @app.route('/dashboard')
 def DashBoard():
@@ -21,6 +25,12 @@ def DashBoard():
         return "DashBoard"
     return redirect("/")
     
+
+@app.route('/logout')
+def LogOut():
+    session.clear()
+    return redirect("/")
+
 # Ajax Call Functions 
 
 @app.route('/sign_action', methods=['POST'])
@@ -45,7 +55,15 @@ def LoginAction():
     password = request.form['password']
     print(email, password)
 
-    return "Login Post Works"
+    response = {}
+    result = mongo.Login(email,password)
+    if response['check']:
+        session['email'] = email
+        session['name'] = result['name'] 
+        response['check'] = True
+        response['link'] = '/dashboard'
+
+    return response
 
 
 @app.errorhandler(404)
