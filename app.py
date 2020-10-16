@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+import mongo
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -14,7 +15,12 @@ def HomePage():
 def LoginPage():
    return render_template("login.html")
 
-
+@app.route('/dashboard')
+def DashBoard():
+    if "name" in session:
+        return "DashBoard"
+    return redirect("/")
+    
 # Ajax Call Functions 
 
 @app.route('/sign_action', methods=['POST'])
@@ -24,7 +30,14 @@ def RegisterUser():
     password = request.form['password']
    
     print(name,email,password)
-    return "Post Request Works"
+    data = {}
+    if mongo.Register(email,name,password):
+        session['email'] = email
+        session['name'] = name 
+        data['check'] = True
+        data['link'] = '/dashboard'
+
+    return data
 
 @app.route('/login_action', methods=['POST'])
 def LoginAction():
