@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" type="image/png" sizes="56x56" href="/static/images/fav-icon/login.png">
-    <title>Register/Login on Developer Dock</title>
+    <title>Register/Login on Portfolio Management</title>
 </head>
 <body>
         <div class="container" id="container">
@@ -21,6 +21,14 @@
 					<div class="row" style="padding-top : 4% ; padding-bottom: 4%">
 						<input type="password" placeholder="Password" id="SignPass"class="form-control" required/>
 				</div>
+					<div class="row">
+						<div class="checkboxes-and-radios">
+							<input type="radio" name="category" id="radio-2" value="Customer">
+							<label for="radio-2">Customer</label>
+							<input type="radio" name="category" id="radio-3" value="CloudProvider" checked>
+							<label for="radio-3">Cloud Provider</label>
+						  </div>
+					</div>	
                     <button>Sign Up</button>
                 </form>
             </div>
@@ -372,8 +380,8 @@ function () {
                     data :{
 						name : $('#SignName').val(),
                         email : $('#SignEmail').val(),
-                        password :$('#SignPass').val()
-						
+                        password :$('#SignPass').val(),
+						category: $('input[name="category"]:checked').val()
                     },
                     type : "POST",
                     url : '/sign_action'
@@ -381,11 +389,11 @@ function () {
               .done(function(data){
                   if (data.check)
                   {
-					$(location).attr('href', data.link);
+					$(location).attr('href', data.link)
                   }
                   else{
-                      
-					alert("Register");
+                    //   
+					alert("Register")
                   }
               });
 		event.preventDefault();
@@ -402,16 +410,13 @@ function () {
                     url : '/login_action'
           })
               .done(function(data){
-		
-				  if (data.check)
+                  if (data.check)
                   {
-					$(location).attr('href', data.link);
+					$(location).attr('href', data.link);	
                   }
                   else{
-                      
-					alert("Invalid Credentials");
+						alert("Error")
                   }
-
               });
 	event.preventDefault();
 });
