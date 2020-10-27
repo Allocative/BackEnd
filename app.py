@@ -24,7 +24,12 @@ def DashBoard():
     if "name" in session:
         return "DashBoard"
     return redirect("/")
-    
+
+@app.route('/CloudProvider')
+def CloudProvider():
+    if "name" in session:
+        return render_template("/cloud/index.html",name=session['name'],email=session['email'])
+    return redirect("/")
 
 @app.route('/logout')
 def LogOut():
@@ -38,30 +43,42 @@ def RegisterUser():
     name = request.form['name']
     email = request.form['email']
     password = request.form['password']
-   
-    print(name,email,password)
+    category = request.form['category']
+    print(name,email,password,category)
     data = {}
-    if mongo.Register(email,name,password):
+    if mongo.Register(email,name,password,category):
         session['email'] = email
         session['name'] = name 
-        data['check'] = True
-        data['link'] = '/dashboard'
+        session['category'] = category
 
+        if category == "CloudProvider":
+            data['link'] = '/CloudProvider'
+        else:
+            data['link'] = '/dashboard' 
+        
+        data['check'] = True
+        
     return data
 
 @app.route('/login_action', methods=['POST'])
 def LoginAction():
     email = request.form['email']
     password = request.form['password']
-    print(email, password)
-
+    
     response = {}
     result = mongo.Login(email,password)
-    if response['check']:
+    if result['check']:
+        
         session['email'] = email
         session['name'] = result['name'] 
+        session['category'] = result['category']
+
         response['check'] = True
-        response['link'] = '/dashboard'
+
+        if result['category'] == "CloudProvider":
+            response['link'] = '/CloudProvider'
+        else:
+            response['link'] = '/dashboard' 
 
     return response
 

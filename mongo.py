@@ -7,6 +7,7 @@ password = "DeepReinorcementLearningProject"
 
 srv = "mongodb+srv://{}:{}@supplychain-u6nhl.mongodb.net/test?retryWrites=true&w=majority".format(
     username, password)
+   
 client = pymongo.MongoClient(srv)
 
 db = client['Allocative']
@@ -14,7 +15,7 @@ db = client['Allocative']
 LoginCollection = db['Auth']
 
 
-def Register(email,name,password):
+def Register(email,name,password,category):
     q1 = {"email":email}
 
     result1 = LoginCollection.find(q1)
@@ -31,7 +32,7 @@ def Register(email,name,password):
     else:
         password = pbkdf2_sha256.hash(password)
         q2 = {"name": name, "email": email,
-              "password": password,"Id":str(uuid.uuid4())}
+              "password": password,"Id":str(uuid.uuid4()),"category":category}
         
         LoginCollection.insert_one(q2)
         return True
@@ -45,8 +46,8 @@ def Login(email,password):
     for i in res:
         if pbkdf2_sha256.verify(password, i['password']):
             data['name'] = i['name']
+            data['category'] = i['category']
             data['check'] = True
     print(data)
     return data
 
-#Register("anmolgoyal@gmail.com","Anmol Goyal","allocative")
