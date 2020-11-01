@@ -22,12 +22,16 @@ def LoginPage():
 @app.route('/dashboard')
 def DashBoard():
     if "name" in session:
+        if session['category'] == "CloudProvider":
+            return redirect("/CloudProvider")
         return "DashBoard"
     return redirect("/")
 
 @app.route('/CloudProvider')
 def CloudProvider():
     if "name" in session:
+        if session['category'] != "CloudProvider":
+            return redirect("/dashboard")
         return render_template("/cloud/index.html",name=session['name'],email=session['email'])
     return redirect("/")
 

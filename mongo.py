@@ -7,7 +7,7 @@ password = "DeepReinorcementLearningProject"
 
 srv = "mongodb+srv://{}:{}@supplychain-u6nhl.mongodb.net/test?retryWrites=true&w=majority".format(
     username, password)
-   
+
 client = pymongo.MongoClient(srv)
 
 db = client['Allocative']
@@ -50,4 +50,3 @@ def Login(email,password):
             data['check'] = True
     print(data)
     return data
-
