@@ -24,7 +24,7 @@ def DashBoard():
     if "name" in session:
         if session['category'] == "CloudProvider":
             return redirect("/CloudProvider")
-        return render_template("/customer/index.html")
+        return render_template("/customer/index.html",name=session['name'])
     return redirect("/")
 
 @app.route('/CloudProvider')
