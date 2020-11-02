@@ -27,6 +27,14 @@ def DashBoard():
         return render_template("/customer/index.html",name=session['name'])
     return redirect("/")
 
+@app.route('/dashboard/Project/New')
+def CustomerNewProject():
+    if "name" in session:
+        if session['category'] == "CloudProvider":
+            return redirect("/CloudProvider")
+        return render_template("/customer/CreateProject.html",name=session['name'])
+    return redirect("/")
+
 @app.route('/CloudProvider')
 def CloudProvider():
     if "name" in session:
