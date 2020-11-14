@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
        
-        <title>Allocative - Update Server Details</title>
+        <title>Allocative - Add Server Details</title>
 
         <!-- Styles -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
@@ -18,12 +18,6 @@
         <link href="/static/cloud/css/alpha.min.css" rel="stylesheet">
         <link href="/static/cloud/css/custom.css" rel="stylesheet">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         <div class="loader">
@@ -45,11 +39,6 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="form-inline my-2 my-lg-0 search">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <label for="search" class="active"><i class="material-icons search-icon">search</i></label>
-                            <a href="#" id="close-search-input"><i class="material-icons">close</i></a>
-                        </form>
                         <ul class="navbar-nav ml-auto">
                             <li class="d-md-block d-lg-none nav-item">
                                 <a class="nav-link search-link" href="#"><i class="material-icons">search</i></a>
@@ -311,22 +300,6 @@
                                         <i class="material-icons">trending_up</i>Charts
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="waves-effect waves-grey">
-                                        <i class="material-icons">tag_faces</i>Extra Pages<i class="material-icons sub-arrow">keyboard_arrow_right</i>
-                                    </a>
-                                    <ul class="accordion-submenu list-unstyled">
-                                        <li><a href="pages-404.html">404</a></li>
-                                        <li><a href="pages-500.html">500</a></li>
-                                        <li><a href="pages-sign-in.html">Sign In</a></li>
-                                        <li><a href="pages-sign-up.html">Sign Up</a></li>
-                                        <li><a href="pages-lock-screen.html">Lock Screen</a></li>
-                                        <li><a href="pages-coming-soon.html">Coming Soon</a></li>
-                                        <li><a href="pages-invoice.html">Invoice</a></li>
-                                        <li><a href="pages-pricing-tables.html">Pricing Tables</a></li>
-                                        <li><a href="pages-help-center.html">Help Center</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -335,88 +308,13 @@
             <div class="page-content">
 
                 <div class="container-fluid">
+                
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="page-title">Forms</h2>
-                        </div>
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Basic Example</h5>
-                                    <p>Here’s a quick example to demonstrate Bootstrap’s form styles. </p>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="custom-control custom-checkbox form-group">
-                                            <input type="checkbox" class="custom-control-input" id="exampleCheck1">
-                                            <label class="custom-control-label" for="exampleCheck1">Check me out</label>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Form controls</h5>
-                                    <p>Textual form controls—like <code>&lt;input&gt;</code>s, <code>&lt;select&gt;</code>s, and <code>&lt;textarea&gt;</code>s—are styled with the <code>.form-control</code> class. Included are styles for general appearance, focus state, sizing, and more.</p>
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlInput1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Example select</label>
-                                            <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                                            <select multiple class="form-control custom-select" id="exampleFormControlSelect2">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Range Inputs</h5>
-                                    <p>Set horizontally scrollable range inputs using <code>.form-control-range</code>.</p>
                                     <form>
-                                        <div class="form-group">
-                                            <input type="range" class="custom-range" id="customRange1">
-
-                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -498,17 +396,37 @@
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Complex Layout</h5>
-                                    <p>More complex layouts can also be created with the grid system.</p>
+                                    <h5 class="card-title">Add Server</h5>
+                                    <p>Create an Instance  of Server.</p>
                                     <form>
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputEmail4">Email</label>
-                                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                                <label for="inputEmail4">Server Label</label>
+                                                <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="inputPassword4">Password</label>
-                                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                                <label for="inputPassword4">Instances</label>
+                                                <input type="number" class="form-control" id="inputPassword4" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <p id="RamValue">
+                                                    Server Ram : 0 GB                        
+                                                </p>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <input type="range" class="custom-range" id="RamRange" min="10" max="100">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <p id="MemoryValue">
+                                                    Server Memory : 0 GB                        
+                                                </p>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <input type="range" class="custom-range" id="MemoryRange" min="10" max="100">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -536,15 +454,7 @@
                                                 <input type="text" class="form-control" id="inputZip">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" id="gridCheck">
-                                                <label class="custom-control-label" for="gridCheck">
-                                                    Check me out
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                        <button type="submit" class="btn btn-primary">Instantiate Server</button>
                                     </form>
                                 </div>
                             </div>
@@ -885,5 +795,29 @@
         <script src="/static/cloud/plugins/waves/waves.min.js"></script>
         <script src="/static/cloud/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
         <script src="/static/cloud/js/alpha.min.js"></script>
+
+        <script>
+            $(document).ready(
+                function () {
+
+                        $("#RamRange").change(
+                            
+                            function(){
+                                var RamUse = "Server Ram: " + $("#RamRange").val() + " GB";
+                                $("#RamValue").text(RamUse);
+                            }
+                        );
+
+                        $("#MemoryRange").change(
+                            
+                            function(){
+                                var RamUse = "Server Memory: " + $("#MemoryRange").val() + " GB";
+                                $("#MemoryValue").text(RamUse);
+                            }
+                        );
+
+
+                });
+        </script>
     </body>
 </html>
