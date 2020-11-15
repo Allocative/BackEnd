@@ -43,6 +43,14 @@ def CloudProvider():
         return render_template("/cloud/index.html",name=session['name'],email=session['email'])
     return redirect("/")
 
+@app.route('/CloudProvider/AddServer')
+def AddServer():
+    if "name" in session:
+        if session['category'] != "CloudProvider":
+            return redirect("/dashboard")
+        return render_template("/cloud/serverdetails.html",name=session['name'],email=session['email'])
+    return redirect("/")
+
 @app.route('/CloudProvider/ServerDetails')
 def ServerDetails():
     if "name" in session:
