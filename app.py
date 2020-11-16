@@ -98,11 +98,18 @@ def GetServerAdd():
     ServerRam = request.form['Ram']
     ServerMemory = request.form['Memory']
 
-    
     LowestTemperature = request.form['LowestTemperature']
     HighestTemperature = request.form['HighestTemperature']
     CurrentTemperature = request.form['CurrentTemperature']
 
+    OptimalLow = request.form['OptimalLow']
+    OptimalHigh = request.form['OptimalHigh']
+
+    mongo.AddServer(session['email'],ServerLabel,
+    ServerInstances,ServerRam,ServerMemory,
+    LowestTemperature,HighestTemperature,CurrentTemperature,
+    OptimalLow,OptimalHigh
+    )
     print(ServerLabel,ServerInstances,ServerRam,ServerMemory)
     return "asd"
 

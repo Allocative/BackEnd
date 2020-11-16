@@ -346,78 +346,6 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Checkboxes and Radios</h5>
-                  <p>
-                    Checkboxes are for selecting one or several options in a
-                    list, while radios are for selecting one option from many.
-                  </p>
-                  <p>Checkbox example:</p>
-                  <div class="custom-control custom-checkbox">
-                    <input
-                      class="custom-control-input"
-                      type="checkbox"
-                      value=""
-                      id="defaultCheck1"
-                    />
-                    <label class="custom-control-label" for="defaultCheck1">
-                      Check this box
-                    </label>
-                  </div>
-                  <div class="custom-control custom-checkbox">
-                    <input
-                      class="custom-control-input"
-                      type="checkbox"
-                      value=""
-                      id="defaultCheck2"
-                      disabled
-                    />
-                    <label class="custom-control-label" for="defaultCheck2">
-                      Disabled checkbox
-                    </label>
-                  </div>
-                  <p class="m-t-sm">Radio example:</p>
-                  <div class="custom-control custom-radio">
-                    <input
-                      class="custom-control-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="exampleRadios1"
-                      value="option1"
-                      checked
-                    />
-                    <label class="custom-control-label" for="exampleRadios1">
-                      Radio #1
-                    </label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input
-                      class="custom-control-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="exampleRadios2"
-                      value="option2"
-                    />
-                    <label class="custom-control-label" for="exampleRadios2">
-                      Radio #2
-                    </label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input
-                      class="custom-control-input"
-                      type="radio"
-                      name="exampleRadios"
-                      id="exampleRadios3"
-                      value="option3"
-                      disabled
-                    />
-                    <label class="custom-control-label" for="exampleRadios3">
-                      Disabled radio
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
                   <h5 class="card-title">Add Server</h5>
                   <p>Create an Instance of Server.</p>
                   <form>
@@ -501,6 +429,52 @@
                         <input type="number" class="form-control" id="OptimalHighTemperature" />
                       </div>
                     </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                       
+                        <h4>
+                          Server Temperature = b<sub>0</sub> + b<sub>1</sub>*(CurrentTemperature)<sup>p1</sup> + b<sub>2</sub>*(RamUtilized)<sup>p2</sup> + b<sub>3</sub>*(DataTransmission)<sup>p3</sup>
+                        </h4>
+                      </div>
+                      <div class="form-group col-md-6">
+                        
+                        <label for="B1">B1 constant </label>
+                        
+                        <input type="number" class="form-control" id="B1" step="0.01"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        
+                        <label for="P1">P1 Power </label>
+                        
+                        <input type="number" class="form-control" id="P1" max="3"/>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        
+                        <label for="B2">B2 constant </label>
+                        
+                        <input type="number" class="form-control" id="B2" step="0.01"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        
+                        <label for="P2">P2 Power </label>
+                        
+                        <input type="number" class="form-control" id="P2" max="3"/>
+                      </div>
+
+                      <div class="form-group col-md-6">
+                        
+                        <label for="B3">B3 constant </label>
+                        
+                        <input type="number" class="form-control" id="B3" step="0.01"/>
+                      </div>
+                      <div class="form-group col-md-6">
+                        
+                        <label for="P3">P3 Power </label>
+                        
+                        <input type="number" class="form-control" id="P3" max="3"/>
+                      </div>
+                    </div>
                     <button
                       type="button"
                       class="btn btn-primary"
@@ -511,177 +485,8 @@
                   </form>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Validation</h5>
-                  <p>
-                    Provide valuable, actionable feedback to your users with
-                    HTML5 form validation.
-                  </p>
-                  <form class="needs-validation" novalidate>
-                    <div class="form-row">
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="validationCustom01">First name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="validationCustom01"
-                            placeholder="First name"
-                            value="Mark"
-                            required
-                          />
-                          <div class="valid-feedback">Looks good!</div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="validationCustom02">Last name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="validationCustom02"
-                            placeholder="Last name"
-                            value="Otto"
-                            required
-                          />
-                          <div class="valid-feedback">Looks good!</div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span
-                                class="input-group-text"
-                                id="inputGroupPrepend"
-                                >@</span
-                              >
-                            </div>
-                            <label for="validationCustomUsername"
-                              >Username</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="validationCustomUsername"
-                              placeholder="Username"
-                              aria-describedby="inputGroupPrepend"
-                              required
-                            />
-                            <div class="invalid-feedback">
-                              Please choose a username.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-md-6 mb-3">
-                        <div class="form-group">
-                          <label for="validationCustom03">City</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="validationCustom03"
-                            placeholder="City"
-                            required
-                          />
-                          <div class="invalid-feedback">
-                            Please provide a valid city.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                        <div class="form-group">
-                          <label for="validationCustom04">State</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="validationCustom04"
-                            placeholder="State"
-                            required
-                          />
-                          <div class="invalid-feedback">
-                            Please provide a valid state.
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-3 mb-3">
-                        <div class="form-group">
-                          <label for="validationCustom05">Zip</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="validationCustom05"
-                            placeholder="Zip"
-                            required
-                          />
-                          <div class="invalid-feedback">
-                            Please provide a valid zip.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            class="custom-control-input"
-                            type="checkbox"
-                            value=""
-                            id="invalidCheck"
-                            required
-                          />
-                          <label
-                            class="custom-control-label"
-                            for="invalidCheck"
-                          >
-                            Agree to terms and conditions
-                          </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary" type="submit">
-                      Submit form
-                    </button>
-                  </form>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Switches</h5>
-                  <p>
-                    A switch has the markup of a custom checkbox but uses the
-                    <code>.custom-switch</code> class to render a toggle switch.
-                    Switches also support the <code>disabled</code> attribute.
-                  </p>
-                  <div class="custom-control custom-switch">
-                    <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      id="customSwitch1"
-                    />
-                    <label class="custom-control-label" for="customSwitch1"
-                      >Toggle this switch element</label
-                    >
-                  </div>
-                  <div class="custom-control custom-switch">
-                    <input
-                      type="checkbox"
-                      class="custom-control-input"
-                      disabled
-                      id="customSwitch2"
-                    />
-                    <label class="custom-control-label" for="customSwitch2"
-                      >Disabled switch element</label
-                    >
-                  </div>
-                </div>
-              </div>
+            
+             
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Select</h5>
