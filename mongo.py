@@ -50,3 +50,9 @@ def Login(email,password):
             data['check'] = True
     print(data)
     return data
+
+def AddServer(userId):
+    q1 = {
+        "CompanyEmail" : userId,
+
+    }

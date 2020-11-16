@@ -298,7 +298,7 @@
         <div class="page-sidebar-inner">
           <div class="page-sidebar-profile">
             <div class="sidebar-profile-info">
-              <a href="javascript:void(0);" class="account-settings-link">
+              <a href="/CloudProvider/AddServer" class="account-settings-link">
                 <p>{{name}}</p>
                 <span
                   >{{ email }}<i class="material-icons float-right"
@@ -309,36 +309,6 @@
             </div>
           </div>
           <div class="page-sidebar-menu">
-            <div class="page-sidebar-settings hidden">
-              <ul class="sidebar-menu list-unstyled">
-                <li>
-                  <a href="#" class="waves-effect waves-grey"
-                    ><i class="material-icons">inbox</i>Inbox</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey"
-                    ><i class="material-icons">star_border</i>Starred</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey"
-                    ><i class="material-icons">done</i>Sent Mail</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey"
-                    ><i class="material-icons">history</i>History</a
-                  >
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey"
-                    ><i class="material-icons">exit_to_app</i>Sign Out</a
-                  >
-                </li>
-              </ul>
-            </div>
             <div class="sidebar-accordion-menu">
               <ul class="sidebar-menu list-unstyled">
                 <li>
@@ -348,96 +318,20 @@
                 </li>
                 <li>
                   <a href="#" class="waves-effect waves-grey">
-                    <i class="material-icons">apps</i>Apps<i
+                    <i class="material-icons">apps</i>Server Settings<i
                       class="material-icons sub-arrow"
                       >keyboard_arrow_right</i
                     >
                   </a>
                   <ul class="accordion-submenu list-unstyled">
-                    <li><a href="app-mailbox.html">Mailbox</a></li>
-                    <li><a href="app-file-manager.html">File Manager</a></li>
-                    <li><a href="app-todo.html">Todo</a></li>
+                    <li><a href="app-mailbox.html">Add Server</a></li>
+                    <li><a href="app-file-manager.html">Server Details</a></li>
+
                   </ul>
                 </li>
                 <li>
-                  <a href="#" class="waves-effect waves-grey">
-                    <i class="material-icons">desktop_windows</i>Layouts<i
-                      class="material-icons sub-arrow"
-                      >keyboard_arrow_right</i
-                    >
-                  </a>
-                  <ul class="accordion-submenu list-unstyled">
-                    <li><a href="layout-blank.html">Blank Page</a></li>
-                    <li><a href="layout-boxed.html">Boxed Layout</a></li>
-                    <li>
-                      <a href="layout-hidden-sidebar.html">Hidden Sidebar</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey">
-                    <i class="material-icons">code</i>Components<i
-                      class="material-icons sub-arrow"
-                      >keyboard_arrow_right</i
-                    >
-                  </a>
-                  <ul class="accordion-submenu list-unstyled">
-                    <li><a href="ui-alerts.html">Alerts</a></li>
-                    <li><a href="ui-accordion.html">Accordion</a></li>
-                    <li><a href="ui-badges.html">Badges</a></li>
-                    <li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
-                    <li><a href="ui-buttons.html">Buttons</a></li>
-                    <li><a href="ui-button-group.html">Button Group</a></li>
-                    <li><a href="ui-cards.html">Cards</a></li>
-                    <li><a href="ui-code.html">Code</a></li>
-                    <li><a href="ui-color.html">Color</a></li>
-                    <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                    <li><a href="ui-icons.html">Icons</a></li>
-                    <li><a href="ui-list-group.html">List Group</a></li>
-                    <li><a href="ui-modal.html">Modal</a></li>
-                    <li><a href="ui-pagination.html">Pagination</a></li>
-                    <li><a href="ui-popovers.html">Popovers</a></li>
-                    <li><a href="ui-progress.html">Progress</a></li>
-                    <li><a href="ui-spinners.html">Spinners</a></li>
-                    <li><a href="ui-tooltips.html">Tooltips</a></li>
-                    <li><a href="ui-typography.html">Typography</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#" class="waves-effect waves-grey">
-                    <i class="material-icons">star_border</i>Plugins<i
-                      class="material-icons sub-arrow"
-                      >keyboard_arrow_right</i
-                    >
-                  </a>
-                  <ul class="accordion-submenu list-unstyled">
-                    <li><a href="plugins-code-editor.html">Code Editor</a></li>
-                    <li><a href="plugins-nestable.html">Nestable List</a></li>
-                    <li><a href="plugins-masonry.html">Masonry</a></li>
-                    <li><a href="plugins-idle.html">Idle Timer</a></li>
-                    <li><a href="plugins-image-crop.html">Image Crop</a></li>
-                    <li><a href="plugins-image-zoom.html">Image Zoom</a></li>
-                    <li><a href="plugins-select2.html">Select2</a></li>
-                    <li><a href="plugins-plupload.html">Plupload</a></li>
-                    <li><a href="plugins-toastr.html">Toastr</a></li>
-                    <li>
-                      <a href="plugins-range-sliders.html">Range Sliders</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="forms.html" class="waves-effect waves-grey active">
-                    <i class="material-icons">mode_edit</i>Forms
-                  </a>
-                </li>
-                <li>
-                  <a href="tables.html" class="waves-effect waves-grey">
-                    <i class="material-icons">grid_on</i>Tables
-                  </a>
-                </li>
-                <li>
-                  <a href="charts.html" class="waves-effect waves-grey">
-                    <i class="material-icons">trending_up</i>Charts
+                  <a href="/logout" class="waves-effect waves-grey">
+                    <i class="material-icons">login</i>LogOut
                   </a>
                 </li>
               </ul>
@@ -450,12 +344,6 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Range Inputs</h5>
-                  <form></form>
-                </div>
-              </div>
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Checkboxes and Radios</h5>
@@ -530,73 +418,6 @@
               </div>
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Form Groups</h5>
-                  <p>
-                    The <code>.form-group</code> class is the easiest way to add
-                    some structure to forms. It provides a flexible class that
-                    encourages proper grouping of labels, controls, optional
-                    help text, and form validation messaging.
-                  </p>
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Example label</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="formGroupExampleInput"
-                        placeholder="Example input"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Another label</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="formGroupExampleInput2"
-                        placeholder="Another input"
-                      />
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Form Grid</h5>
-                  <p>
-                    More complex forms can be built using our grid classes. Use
-                    these for form layouts that require multiple columns, varied
-                    widths, and additional alignment options.
-                  </p>
-                  <form>
-                    <div class="row">
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="input1">First name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="First name"
-                            id="input1"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-group">
-                          <label for="input2">Last name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Last name"
-                            id="input2"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
                   <h5 class="card-title">Add Server</h5>
                   <p>Create an Instance of Server.</p>
                   <form>
@@ -611,11 +432,11 @@
                         />
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="inputPassword4">Instances</label>
+                        <label for="InstanceCount">Instances</label>
                         <input
                           type="number"
                           class="form-control"
-                          id="inputPassword4"
+                          id="InstanceCount"
                           placeholder="Password"
                         />
                       </div>
@@ -648,46 +469,36 @@
                         />
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label for="inputAddress">Address</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputAddress"
-                        placeholder="1234 Main St"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="inputAddress2">Address 2</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputAddress2"
-                        placeholder="Apartment, studio, or floor"
-                      />
-                    </div>
                     <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
+                      <div class="form-group col-md-4">
+                        <label for="ServerLowTemperature">Lowest Working Temperature (&#8451;)</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
-                          id="inputCity"
+                          id="ServerLowTemperature"
                         />
                       </div>
                       <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select
-                          id="inputState"
-                          class="form-control custom-select"
-                        >
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
+                        <label for="ServerHighTemperature">Highest Working Temperature (&#8451;)</label>
+                        <input type="number" class="form-control" id="ServerHighTemperature" />
                       </div>
-                      <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip" />
+                      <div class="form-group col-md-4">
+                        <label for="CurrentTemperature">Current Room Temperature (&#8451;)</label>
+                        <input type="number" class="form-control" id="CurrentTemperature" />
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="OptimalLowTemperature">Lowest Optimal Working Temperature (&#8451;)</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="OptimalLowTemperature"
+                        />
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="OptimalHighTemperature">Highest Optimal Working Temperature (&#8451;) </label>
+                        <input type="number" class="form-control" id="OptimalHighTemperature" />
                       </div>
                     </div>
                     <button
@@ -1274,13 +1085,22 @@
         $("#InstantiateServer").click(function () {
           $.ajax({
             data: {
+              
               Label: $("input[id='ServerLabel']").val(),
+              Instance: $("input[id='InstanceCount']").val(),
+              
               Ram: $("#RamRange").val(),
               Memory: $("#MemoryRange").val(),
-              category: $('input[name="category"]:checked').val(),
+
+              LowestTemperature : $("#ServerLowTemperature").val(),
+              HighestTemperature : $("#ServerHighTemperature").val(),
+              CurrentTemperature : $("#CurrentTemperature").val(),
+
+              OptimalLow : $("#OptimalLowTemperature").val(),
+              OptimalHigh : $("#OptimalHighTemperature").val()
             },
             type: "POST",
-            url: "/sign_action",
+            url: "/GetServerAdd",
           }).done(
               function (data) {
 

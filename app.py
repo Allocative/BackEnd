@@ -89,6 +89,23 @@ def RegisterUser():
         
     return data
 
+@app.route('/GetServerAdd',methods=['POST'])
+def GetServerAdd():
+
+    ServerLabel = request.form['Label']
+    ServerInstances = request.form['Instance']
+
+    ServerRam = request.form['Ram']
+    ServerMemory = request.form['Memory']
+
+    
+    LowestTemperature = request.form['LowestTemperature']
+    HighestTemperature = request.form['HighestTemperature']
+    CurrentTemperature = request.form['CurrentTemperature']
+
+    print(ServerLabel,ServerInstances,ServerRam,ServerMemory)
+    return "asd"
+
 @app.route('/login_action', methods=['POST'])
 def LoginAction():
     email = request.form['email']
