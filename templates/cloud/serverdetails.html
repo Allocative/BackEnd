@@ -432,9 +432,9 @@
                     <div class="form-row">
                       <div class="form-group col-md-12">
                        
-                        <h4>
-                          Server Temperature = b<sub>0</sub> + b<sub>1</sub>*(CurrentTemperature)<sup>p1</sup> + b<sub>2</sub>*(RamUtilized)<sup>p2</sup> + b<sub>3</sub>*(DataTransmission)<sup>p3</sup>
-                        </h4>
+                        <h3>
+                          Server Temperature = b<sub>1</sub>*(CurrentTemperature)<sup>p1</sup> + b<sub>2</sub>*(RamUtilized)<sup>p2</sup> + b<sub>3</sub>*(DataTransmission)<sup>p3</sup>
+                        </h3>
                       </div>
                       <div class="form-group col-md-6">
                         
@@ -902,7 +902,16 @@
               CurrentTemperature : $("#CurrentTemperature").val(),
 
               OptimalLow : $("#OptimalLowTemperature").val(),
-              OptimalHigh : $("#OptimalHighTemperature").val()
+              OptimalHigh : $("#OptimalHighTemperature").val(),
+
+              B1 = $("#B1").val(),
+              P1 = $("#P1").val(),
+              
+              B3 = $("#B2").val(),
+              P2 = $("#P2").val(),
+
+              B3 = $("#B3").val(),
+              P3 = $("#P3").val(),
             },
             type: "POST",
             url: "/GetServerAdd",
