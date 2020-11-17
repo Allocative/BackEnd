@@ -163,6 +163,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Project Name</th>
+                                                        <th scope="col">Cloud Provider</th>
                                                         <th scope="col">Ram Allocated</th>
                                                         <th scope="col">Memory Allocated</th>
                                                         <th scope="col">Project Start time</th>
@@ -170,13 +171,17 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    {% for i in ProjectList %}
                                                     <tr>
-                                                        <th scope="row">07809</th>
-                                                        <td>Alpha - Angular 8</td>
-                                                        <td>Chritopher Palmer</td>
-                                                        <td>Dec 15, 2019</td>
-                                                        <td><span class="badge badge-info">In Progress</span></td>
+                                                        <th scope="row">{{ ProjectList[i]['Name'] }}</th>
+                                                        <td>{{ ProjectList[i]['CloudProvider'] }} </td>
+                                                        <td>{{ ProjectList[i]['Ram'] }} GB</td>
+                                                        <td>{{ ProjectList[i]['Memory'] }} GB</td>
+                                                        <td>{{ ProjectList[i]['StartTime'] }}</td>
+                                                        <td><span class="badge badge-info">{{ ProjectList[i]['EndTime'] }}</span></td>
                                                     </tr>               
+                                                    {% endfor %}
+                                                
                                                 </tbody>
                                             </table>
                                         </div>      

@@ -24,7 +24,9 @@ def DashBoard():
     if "name" in session:
         if session['category'] == "CloudProvider":
             return redirect("/CloudProvider")
-        return render_template("/customer/index.html",name=session['name'])
+        ProjectList = mongo.GetProjectList(session['email'])
+        print(ProjectList)
+        return render_template("/customer/index.html",name=session['name'],ProjectList=ProjectList)
     return redirect("/")
 
 @app.route('/dashboard/Project/New')
@@ -32,7 +34,9 @@ def CustomerNewProject():
     if "name" in session:
         if session['category'] == "CloudProvider":
             return redirect("/CloudProvider")
-        return render_template("/customer/CreateProject.html",name=session['name'])
+        CloudList = mongo.GetCloudList()
+        print(CloudList)
+        return render_template("/customer/CreateProject.html",name=session['name'],CloudList=CloudList)
     return redirect("/")
 
 @app.route('/CloudProvider')
@@ -112,6 +116,25 @@ def GetServerAdd():
     )
     print(ServerLabel,ServerInstances,ServerRam,ServerMemory)
     return "asd"
+
+@app.route('/AddProject', methods=['POST'])
+def CreateProject():
+
+    Name = request.form['Name']
+    Ram = request.form['Ram']
+    Memory = request.form['Memory']
+
+    CloudProvider = request.form['CloudProvider']
+    StartTime = request.form['StartTime']
+    EndTime = request.form['EndTime']    
+
+    mongo.AddProject(Name,Ram,Memory,CloudProvider,StartTime,EndTime,session['email'])
+    response = {}
+
+    return response
+
+
+
 
 @app.route('/login_action', methods=['POST'])
 def LoginAction():
