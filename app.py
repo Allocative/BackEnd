@@ -44,7 +44,8 @@ def CloudProvider():
     if "name" in session:
         if session['category'] != "CloudProvider":
             return redirect("/dashboard")
-        return render_template("/cloud/index.html",name=session['name'],email=session['email'])
+        ProjectList = mongo.GetCloudProject(session['email'])
+        return render_template("/cloud/index.html",name=session['name'],email=session['email'],ProjectList=ProjectList)
     return redirect("/")
 
 @app.route('/CloudProvider/AddServer')
@@ -128,7 +129,10 @@ def CreateProject():
     StartTime = request.form['StartTime']
     EndTime = request.form['EndTime']    
 
-    mongo.AddProject(Name,Ram,Memory,CloudProvider,StartTime,EndTime,session['email'])
+    print(CloudProvider)
+    CloudProviderEmail,CloudProviderName = CloudProvider.split("#")
+
+    mongo.AddProject(Name,Ram,Memory,CloudProviderName,StartTime,EndTime,session['email'],CloudProviderEmail)
     response = {}
 
     return response

@@ -226,7 +226,7 @@
                                                     <select id="ServiceProvider" class="form-control custom-select">
                                                         {% for i in CloudList %}
                                                         
-                                                        <option>{{ CloudList[i]['name'] }}</option>
+                                                        <option value="{{CloudList[i]['email']}}#{{ CloudList[i]['name'] }}">{{ CloudList[i]['name'] }}</option>
 
                                                         {% endfor %}
                                                     </select>

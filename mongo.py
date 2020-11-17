@@ -14,6 +14,7 @@ db = client['Allocative']
 
 LoginCollection = db['Auth']
 ProjectCollection = db['Project']
+ServerCollection = db['Server']
 
 def Register(email,name,password,category):
     q1 = {"email":email}
@@ -57,9 +58,24 @@ def GetCloudList():
     result = LoginCollection.find(l1)
     counter = 1 
     for i in result:
-        data[counter] = {'name':i['name']}
+        data[counter] = {'name':i['name'],'email':i['email']}
         counter +=1 
 
+    return data
+
+def GetCloudProject(name):
+    q1 = {"CloudProviderEmail":name}
+    data = {}
+    result = ProjectCollection.find(q1)
+    counter = 1 
+    for i in result:
+        data[counter] = {
+            "Project":i['Name'],
+            "email":i['email'],
+            "Ram":i['Ram'],
+            "Memory":i['Memory']
+                        }
+        counter += 1
     return data
 
 def GetProjectList(email):
@@ -78,13 +94,14 @@ def GetProjectList(email):
         }
         counter+=1
     return data 
-def AddProject(Name,Ram,Memory,CloudProvider,StartTime,EndTime,email):
+def AddProject(Name,Ram,Memory,CloudProvider,StartTime,EndTime,email,CloudProviderEmail):
     q1 = {
         'email':email,
         'Name':Name,
         'Ram':Ram,
         'Memory':Memory,
         'CloudProvider':CloudProvider,
+        'CloudProviderEmail':CloudProviderEmail,
         'StartTime':StartTime,
         'EndTime':EndTime
     }

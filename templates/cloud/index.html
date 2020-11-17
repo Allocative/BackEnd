@@ -273,27 +273,22 @@
                                     <h5 class="card-title">Reports</h5>
                                    
                                     <ul class="report-list list-unstyled">
+                                        {% for i in ProjectList %}
                                         <li class="report-item">
                                             <div class="report-icon"><i class="material-icons">add</i></div>
-                                            <div class="report-text">Alan Grey uploaded new item
-                                                <span>This item has to be reviewed, moderators will check it soon.</span>
+                                            <div class="report-text">
+                                                {{ ProjectList[i]['Project'] }} was created by {{ ProjectList[i]['email'] }}
+                                                
+                                                <span>
+                                                    
+                                                    Ram : {{ ProjectList[i]['Ram']}} GB
+                                                    Memory : {{ ProjectList[i]['Memory']}} GB
+                                                </span>
+                                                
                                             </div>
-                                            <div class="report-helper">45min ago</div>
+                                            
                                         </li>
-                                        <li class="report-item report-info">
-                                            <div class="report-icon"><i class="material-icons">code</i></div>
-                                            <div class="report-text">David Crook made changes to create-invoice.js
-                                                <span>57 lines of code added, 0 removals, 0 errors, 6 warnings</span>
-                                            </div>
-                                            <div class="report-helper">3h ago</div>
-                                        </li>
-                                        <li class="report-item report-danger">
-                                            <div class="report-icon"><i class="material-icons">error_outline</i></div>
-                                            <div class="report-text">Can't retrieve data from server
-                                                <span>Server is not responding, please contact provider</span>
-                                            </div>
-                                            <div class="report-helper">6h ago</div>
-                                        </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
